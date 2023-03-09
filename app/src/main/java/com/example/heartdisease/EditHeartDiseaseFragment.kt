@@ -132,10 +132,10 @@ class EditHeartDiseaseFragment : Fragment(), View.OnClickListener, AdapterView.O
 			crudHeartDiseaseSearch()
 		}			
 		R.id.crudHeartDiseaseOK-> {
-			crudHeartDiseaseOK()
+			editHeartDiseaseOK()
 		}
 		R.id.crudHeartDiseaseCancel-> {
-			crudHeartDiseaseCancel()
+			editHeartDiseaseCancel()
 		}
 	  }
     }
@@ -168,7 +168,7 @@ class EditHeartDiseaseFragment : Fragment(), View.OnClickListener, AdapterView.O
 		}
 	}
 
-	private fun crudHeartDiseaseOK() {
+	private fun editHeartDiseaseOK() {
 		idData = idTextField.text.toString()
 			heartDiseaseBean.setId(idData)
 		ageData = ageTextField.text.toString()
@@ -209,7 +209,7 @@ class EditHeartDiseaseFragment : Fragment(), View.OnClickListener, AdapterView.O
 		}
 	}
 
-	private fun crudHeartDiseaseCancel() {
+	private fun editHeartDiseaseCancel() {
 		heartDiseaseBean.resetData()
 		idTextField.setText("")
 		ageTextField.setText("")
