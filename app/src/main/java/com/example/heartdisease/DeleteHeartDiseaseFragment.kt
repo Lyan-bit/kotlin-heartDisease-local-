@@ -81,11 +81,11 @@ class DeleteHeartDiseaseFragment : Fragment(), View.OnClickListener, AdapterView
 		}
 
 	when (v?.id) {
-		R.id.deleteHeartDiseaseOK-> {
-			crudHeartDiseaseOK()
+		R.id.crudHeartDiseaseOK-> {
+			deleteHeartDiseaseOK()
 		}
-		R.id.deleteHeartDiseaseCancel-> {
-			crudHeartDiseaseCancel()
+		R.id.crudHeartDiseaseCancel-> {
+			deleteHeartDiseaseCancel()
 		}
 	  }
     }
