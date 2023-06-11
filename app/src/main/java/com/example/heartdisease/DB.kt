@@ -346,7 +346,7 @@ private val heartdiseaseCreateSchema =
 
     fun editHeartDisease(heartdiseasevo: HeartDiseaseVO) {
         database = writableDatabase
-        val args = arrayOf(heartdiseasevo.getId())
+        val args = arrayOf(heartdiseasevo.id)
         database.update(heartDiseaseTableName, putData(heartdiseasevo), "id =?", args)
     }
 
@@ -358,42 +358,42 @@ private val heartdiseaseCreateSchema =
 
 	private fun setData(cursor: Cursor): HeartDiseaseVO {
 		val heartdiseasevo = HeartDiseaseVO()
-		heartdiseasevo.setId(cursor.getString(heartDiseaseColId))
-		heartdiseasevo.setAge(cursor.getInt(heartDiseaseColAge))
-		heartdiseasevo.setSex(cursor.getInt(heartDiseaseColSex))
-		heartdiseasevo.setCp(cursor.getInt(heartDiseaseColCp))
-		heartdiseasevo.setTrestbps(cursor.getInt(heartDiseaseColTrestbps))
-		heartdiseasevo.setChol(cursor.getInt(heartDiseaseColChol))
-		heartdiseasevo.setFbs(cursor.getInt(heartDiseaseColFbs))
-		heartdiseasevo.setRestecg(cursor.getInt(heartDiseaseColRestecg))
-		heartdiseasevo.setThalach(cursor.getInt(heartDiseaseColThalach))
-		heartdiseasevo.setExang(cursor.getInt(heartDiseaseColExang))
-		heartdiseasevo.setOldpeak(cursor.getInt(heartDiseaseColOldpeak))
-		heartdiseasevo.setSlope(cursor.getInt(heartDiseaseColSlope))
-		heartdiseasevo.setCa(cursor.getInt(heartDiseaseColCa))
-		heartdiseasevo.setThal(cursor.getInt(heartDiseaseColThal))
-		heartdiseasevo.setOutcome(cursor.getString(heartDiseaseColOutcome))
+		heartdiseasevo.id = cursor.getString(heartDiseaseColId)
+		heartdiseasevo.age = cursor.getInt(heartDiseaseColAge)
+		heartdiseasevo.sex = cursor.getInt(heartDiseaseColSex)
+		heartdiseasevo.cp = cursor.getInt(heartDiseaseColCp)
+		heartdiseasevo.trestbps = cursor.getInt(heartDiseaseColTrestbps)
+		heartdiseasevo.chol = cursor.getInt(heartDiseaseColChol)
+		heartdiseasevo.fbs = cursor.getInt(heartDiseaseColFbs)
+		heartdiseasevo.restecg = cursor.getInt(heartDiseaseColRestecg)
+		heartdiseasevo.thalach = cursor.getInt(heartDiseaseColThalach)
+		heartdiseasevo.exang = cursor.getInt(heartDiseaseColExang)
+		heartdiseasevo.oldpeak = cursor.getInt(heartDiseaseColOldpeak)
+		heartdiseasevo.slope = cursor.getInt(heartDiseaseColSlope)
+		heartdiseasevo.ca = cursor.getInt(heartDiseaseColCa)
+		heartdiseasevo.thal = cursor.getInt(heartDiseaseColThal)
+		heartdiseasevo.outcome = cursor.getString(heartDiseaseColOutcome)
 
 		return heartdiseasevo
 	}
 
 	private fun putData(heartdiseasevo: HeartDiseaseVO): ContentValues {
 		val wr = ContentValues(heartdiseaseNumberCols)
-		wr.put(heartdiseaseCols[heartDiseaseColId], heartdiseasevo.getId())
-		wr.put(heartdiseaseCols[heartDiseaseColAge], heartdiseasevo.getAge())
-		wr.put(heartdiseaseCols[heartDiseaseColSex], heartdiseasevo.getSex())
-		wr.put(heartdiseaseCols[heartDiseaseColCp], heartdiseasevo.getCp())
-		wr.put(heartdiseaseCols[heartDiseaseColTrestbps], heartdiseasevo.getTrestbps())
-		wr.put(heartdiseaseCols[heartDiseaseColChol], heartdiseasevo.getChol())
-		wr.put(heartdiseaseCols[heartDiseaseColFbs], heartdiseasevo.getFbs())
-		wr.put(heartdiseaseCols[heartDiseaseColRestecg], heartdiseasevo.getRestecg())
-		wr.put(heartdiseaseCols[heartDiseaseColThalach], heartdiseasevo.getThalach())
-		wr.put(heartdiseaseCols[heartDiseaseColExang], heartdiseasevo.getExang())
-		wr.put(heartdiseaseCols[heartDiseaseColOldpeak], heartdiseasevo.getOldpeak())
-		wr.put(heartdiseaseCols[heartDiseaseColSlope], heartdiseasevo.getSlope())
-		wr.put(heartdiseaseCols[heartDiseaseColCa], heartdiseasevo.getCa())
-		wr.put(heartdiseaseCols[heartDiseaseColThal], heartdiseasevo.getThal())
-		wr.put(heartdiseaseCols[heartDiseaseColOutcome], heartdiseasevo.getOutcome())
+		wr.put(heartdiseaseCols[heartDiseaseColId], heartdiseasevo.id)
+		wr.put(heartdiseaseCols[heartDiseaseColAge], heartdiseasevo.age)
+		wr.put(heartdiseaseCols[heartDiseaseColSex], heartdiseasevo.sex)
+		wr.put(heartdiseaseCols[heartDiseaseColCp], heartdiseasevo.cp)
+		wr.put(heartdiseaseCols[heartDiseaseColTrestbps], heartdiseasevo.trestbps)
+		wr.put(heartdiseaseCols[heartDiseaseColChol], heartdiseasevo.chol)
+		wr.put(heartdiseaseCols[heartDiseaseColFbs], heartdiseasevo.fbs)
+		wr.put(heartdiseaseCols[heartDiseaseColRestecg], heartdiseasevo.restecg)
+		wr.put(heartdiseaseCols[heartDiseaseColThalach], heartdiseasevo.thalach)
+		wr.put(heartdiseaseCols[heartDiseaseColExang], heartdiseasevo.exang)
+		wr.put(heartdiseaseCols[heartDiseaseColOldpeak], heartdiseasevo.oldpeak)
+		wr.put(heartdiseaseCols[heartDiseaseColSlope], heartdiseasevo.slope)
+		wr.put(heartdiseaseCols[heartDiseaseColCa], heartdiseasevo.ca)
+		wr.put(heartdiseaseCols[heartDiseaseColThal], heartdiseasevo.thal)
+		wr.put(heartdiseaseCols[heartDiseaseColOutcome], heartdiseasevo.outcome)
 
 		return wr
 	}
